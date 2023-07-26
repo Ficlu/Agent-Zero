@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+
+@-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+
+    }
+  
+    to {
+      opacity: 1;
+
+    }
+  }
+
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+
+    }
+  
+    to {
+      opacity: 1;
+
+    }
+  }
+
+  @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background: #466644;
+    
+    padding:0px;
+    margin:0px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    display: flex;
+    background: linear-gradient(-45deg, #ee76527c, #e73c7e7c, #23a5d57c, #23d5ab7c);
+    background-size: 300% 300%;
+    animation: gradient 13s cubic-bezier(0.58, 0.15, 1, 0.74) infinite;
+    border-top: #b6b1c9de solid 15px;
+    border-bottom: #b6b1c9de solid 15px;
+    flex: 1;
+    border-top-left-radius: 22%;
+    border-top-right-radius: 22%;
+    border-bottom-left-radius: 26%;
+    border-bottom-right-radius: 34%;
+    padding-top: 2%;
+    padding-right: 3%;
+    padding-bottom: 3%;
+    padding-left: 2%;
+    overflow: hidden;
+}
+
+
+
+#layer2{
+    background: linear-gradient(45deg, #ee76527c, #e73c7e7c, #23a5d57c, #23d5ab7c);
+    background-size: 600% 600%;
+    animation: gradient 17s ease infinite;
+}
+
+#leftPanel {
+    flex: 1;
+    height: 94%;
+
+    overflow: auto;
+    padding: 24px;
+    align-self: center;
+    box-sizing: border-box;
+    background: #ffe66ec2;
+    border: rgb(207 255 181 / 88%) solid 9px;
+    border-radius: 54px;
+}
+
+#chatbox {
+    flex:4; 
+    overflow-y: scroll;
+    padding: 24px;
+    justify-self:center;
+    box-sizing: border-box;
+    background-color: #21212100;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+header {
+    border-bottom-left-radius: 43%;
+    border-bottom-right-radius: 43%;
+    text-align: center;
+    padding: 21px;
+    padding-bottom: 60px;
+    border-bottom: #f96556 solid 8px;
+    background: #3c3420d1;
+    position: relative;
+}
+
+
+h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-family: "Nabla";
+    font-palette: --myPalette;
+    margin: 0px;
+    font-size: 4em;
+}
+
+
+
+@font-palette-values --myPalette {
+    font-family: "Nabla";
+    base-palette: 4;
+    override-colors: 7 #00bf16, 
+    6 #bfb7ff,
+    2 #efba64,
+    3 #eaa3d4,
+    5 #ff0000a6;
+  }
+
+  .header-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+}
+
+.hamburger {
+    font-size: 1.5em;
+    background-color: transparent;
+    border: none;
+    
+    color: white;
+    cursor: pointer;
+}
+
+#menuContent a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 1em;
+}
+
+#menuContent h1 {
+    margin: 0;
+    
+    padding: 0;
+}
+
+#menuContent {
+    display: grid;
+}
+
+footer {
+    background-color: #3c3420;
+    padding: 37px;
+    border-top-left-radius: 43%;
+    border-top-right-radius: 43%;
+    border-top: #f96556 solid 8px;
+}
+
+#inputForm {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+#userInput {
+    width: 100%;
+    max-width: 600px;
+    background-color: #d6bee7f5;
+    border: none;
+    border-radius: 4px;
+    color: #262525;
+    padding: 10px;
+    outline: none;
+    resize: none;
+}
+
+button {
+    background-color: #786e3ac2;
+    border: none;
+    color: #d6bee7;
+    padding: 8px 16px;
+    font-size: 22px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    font-family: 'Material Symbols Outlined', sans-serif;
+    font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 48;
+}
+
+button.recording {
+    background-color: green;
+}
+
+button.recording:hover {
+    background-color: rgb(1, 83, 1);
+}
+button.playing {
+    background-color: green;
+}
+button.playing:hover {
+    background-color: rgb(1, 83, 1);
+}
+
+button:hover {
+    background-color: #403f3f;
+}
+
+.user-message, .mona-message {
+    padding: 12px;
+    border-radius: 8px;
+    width: fit-content;
+    max-width: 90%;
+    word-wrap: break-word;
+    animation: fadeIn 3.3s ease;
+ 
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #3ea74c;
+}
+
+.mona-message {
+    align-self: flex-start;
+    background-color: #7c7797;
+}
+
+
+.user-message {
+    align-self: flex-end;
+    background-color: #3ea74c;
+}
+
+.mona-message {
+    
+    align-self: flex-start;
+    background-color: #7c7797;
+}
+
+@media (min-width: 768px) {
+    #chatbox {
+        width: 768px;
+        margin: 0 auto;
+    }    
+
+    #inputForm {
+        width: 768px;
+        margin: 0 auto;
+    }
+}
+/* Custom scrollbar styles */
+#chatbox::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(207 255 181 / 88%);
+}
+
+#chatbox::-webkit-scrollbar-track {
+    background: rgb(207 255 181 / 88%);
+    border-radius: 5px;
+}
+
+#chatbox::-webkit-scrollbar-thumb {
+    background: rgb(207 255 181 / 88%);
+    border-radius: 5px;
+}
+
+#chatbox:hover::-webkit-scrollbar-thumb {
+    background: rgb(207 255 181 / 88%);
+}
+
+/* For Firefox */
+#chatbox {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    scrollbar-width: thin;
+    scrollbar-color: #333 #212121;
+}
+
+#typing {
+    animation: fadeIn 3.4s ease;
+    display: none; 
+    justify-content: space-between;
+    flex-direction: row;
+    width: 40px;
+}
+
+.dot {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    margin: 3px;
+}
+
+.dot:nth-child(1) {
+    animation: typing1 1.2s infinite;
+}
+
+.dot:nth-child(2) {
+    animation: typing2 1.4s infinite;
+}
+
+.dot:nth-child(3) {
+    animation: typing3 1.6s infinite;
+}
+
+@keyframes typing1 {
+    0% { transform: scale(0); }
+    20% { transform: scale(1); }
+    40% { transform: scale(0); }
+}
+
+@keyframes typing2 {
+    0% { transform: scale(0); }
+    20% { transform: scale(1); }
+    40% { transform: scale(0); }
+}
+
+@keyframes typing3 {
+    0% { transform: scale(0); }
+    20% { transform: scale(1); }
+    40% { transform: scale(0); }
+}
+
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        opacity: 1;
+    }
+    20%, 23%, 55% {
+        opacity: 0.6;
+    }
+    27%, 48% {
+        opacity: 0.3;
+    }
+}
+
+.flicker {
+    animation: flicker 2s infinite;
+}
+
+

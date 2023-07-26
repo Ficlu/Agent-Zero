@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <form id="userProfileForm">
+        <input type="text" id="u_name" name="u_name" placeholder="Name"><br>
+        <input type="number" id="u_age" name="u_age" placeholder="Age"><br>
+        <input type="text" id="u_ethnicity" name="u_ethnicity" placeholder="Ethnicity"><br>
+        <input type="text" id="u_gender" name="u_gender" placeholder="Gender"><br>
+        <input type="text" id="u_personality" name="u_personality" placeholder="Personality"><br>
+        <input type="number" id="u_iq" name="u_iq" placeholder="IQ"><br>
+        <input type="text" id="u_labels" name="u_labels" placeholder="Labels"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        $("#userProfileForm").submit(function(e) {
+            e.preventDefault();
+            $.ajax({
+                url: '/create_user_profile',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    u_name: $("#u_name").val(),
+                    u_age: $("#u_age").val(),
+                    u_ethnicity: $("#u_ethnicity").val(),
+                    u_gender: $("#u_gender").val(),
+                    u_personality: $("#u_personality").val(),
+                    u_iq: $("#u_iq").val(),
+                    u_labels: $("#u_labels").val(),
+                }),
+                success: function(data) {
+                    alert('User profile created successfully');
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log("Error: ", errorThrown);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

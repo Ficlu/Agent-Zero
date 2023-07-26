@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Companion</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/static/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-grid">
+            <button class="hamburger">&#x2630;</button>
+            <div id="menuContent">
+                <h1>Agent Zero</h1>
+            </div>
+            <div></div> <!-- This is an empty div to balance out the grid -->
+        </div>
+    </header>
+    
+    
+    <main>
+     
+        <div id="leftPanel">
+            <form id="configForm">
+                <label for="agent_id">Agent ID: </label><br>
+                <select id="agent_id" name="agent_id" required>
+              
+                </select><br>
+                <label for="chat_id">Chat ID: </label><br>
+                <input type="text" id="chat_id" name="chat_id" required><br>
+                
+                <input type="submit" value="Load"><br>
+                <input type="button" value="New Agent" id="new_agent"><br>
+                <input type="button" value="New Chat" id="new_chat">
+            </form>
+        </div>
+        <div id="chatbox">
+            <div id="typing" class="mona-message">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            
+            <!-- Messages dynamically inserted here -->
+        </div>
+    
+</main>
+    <footer>
+        <form id="inputForm">
+            
+            <button type="button" id="recordButton">&#xe91f;</button>
+
+            <textarea id="userInput" placeholder="Type your message..." rows="2"></textarea>
+            <button type="submit" id="sendButton">Send</button>
+            <button type="button" id="replayButton">&#xf1bc;</button>
+        </form>
+    </footer>
+</body>
+</html>
